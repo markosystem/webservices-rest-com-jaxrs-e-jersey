@@ -8,24 +8,24 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.alura.loja.dao.CarrinhoDAO;
-import br.com.alura.loja.modelo.Carrinho;
+import br.com.alura.loja.dao.ProjetoDAO;
+import br.com.alura.loja.modelo.Projeto;
 
-@Path("carrinhos")
-public class CarrinhoResource {
+@Path("projetos")
+public class ProjetoResource {
 
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	public String all() {
-		List<Carrinho> carrinhos = new CarrinhoDAO().busca();
-		return new Carrinho().toXML(carrinhos);
+		List<Projeto> projetos = new ProjetoDAO().busca();
+		return new Projeto().toXML(projetos);
 	}
-	
+
 	@GET
 	@Produces(MediaType.APPLICATION_XML)
 	@Path("{id}")
 	public String buscaPorId(@PathParam("id") long id) {
-		return new CarrinhoDAO().busca(id).toXML();
+		return new ProjetoDAO().busca(id).toXML();
 	}
 
 }

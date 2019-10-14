@@ -75,5 +75,9 @@ public class Carrinho {
 	public String toXML() {
 	    return new XStream().toXML(this);
 	}
+	
+	public String toXML(List<Carrinho> list) {
+		return new XStream().toXML(list.toArray());
+	}
 
 }
