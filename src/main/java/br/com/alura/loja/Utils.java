@@ -49,7 +49,7 @@ public class Utils {
 	public void start() throws IOException {
 		setServerObjetct(GrizzlyHttpServerFactory.createHttpServer(getUriObject(), getConfigObject()));
 		System.out.println("Inicializando o servidor em ".concat(getUrl()));
-		//System.in.read();
+		System.in.read();
 	}
 
 	/**
